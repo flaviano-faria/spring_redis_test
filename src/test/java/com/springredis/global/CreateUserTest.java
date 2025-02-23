@@ -8,16 +8,16 @@ import io.cucumber.java.en.When;
 public class CreateUserTest {
 
 
-    @Given("There are user infos {Number} and {string}")
-    public void createUserTest(String id, String name) {
+    @Given("Given  I have user infos {} and {}")
+    public void givenIHaveUserInfosAnd(String arg0, String arg1) {
         int x = 0;
         assert x == 0;
     }
 
 
 
-    @When("I send create user request")
-    public void sendUserCreationTest(){
+    @When("When send create user request")
+    public void whenSendCreateUserRequest() {
         int x = 0;
         assert x == 0;
     }
@@ -28,7 +28,10 @@ public class CreateUserTest {
         assert x == 0;
     }
 
-    @Given("There are user infos {int} and {string}")
-    public void thereAreUserInfosAnd(String arg0, String arg1) {
+
+    @Then("Then I should have a user object retrieved")
+    public void thenIShouldHaveAUserObjectRetrieved() {
+        int x = 0;
+        assert x == 0;
     }
 }
