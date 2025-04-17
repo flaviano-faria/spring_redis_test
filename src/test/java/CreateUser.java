@@ -1,4 +1,4 @@
-import cucumber.annotation.en.Given;
+import io.cucumber.java.en.Given;
 
 public class CreateUser {
 
