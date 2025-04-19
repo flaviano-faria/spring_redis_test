@@ -1,6 +1,6 @@
 Feature: create user in redis
 
-  Scenario Outline: Maker starts a game
+  Scenario Outline: User creation
     Given Given  I have user infos:
       | id   | name      |
       | <id> | <name>    |
