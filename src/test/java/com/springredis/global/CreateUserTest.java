@@ -14,8 +14,7 @@ public class CreateUserTest {
     @Given("Given  I have user infos:")
     public void givenIHaveUserInfosAnd(List<User> listUser) {
         for (User user : listUser) {
-            System.out.println(user.getId() + " " + user.getName()
-            );
+
         }
         int x = 0;
         assert x == 0;
