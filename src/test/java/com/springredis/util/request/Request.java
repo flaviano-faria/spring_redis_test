@@ -15,4 +15,16 @@ public class Request {
                 .response();
         return response.getBody().asString();
     }
+
+    public String doPost(String body, String url, String path) {
+        Response response  = given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(body)
+                .when()
+                .post(path)
+                .then()
+                .extract().response();
+        return response.getBody().asString();
+    }
 }

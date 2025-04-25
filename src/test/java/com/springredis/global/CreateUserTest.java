@@ -1,4 +1,5 @@
 package com.springredis.global;
+import com.springredis.util.request.Request;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.StepDefinitionAnnotation;
 import io.cucumber.java.en.Given;
@@ -10,20 +11,20 @@ import java.util.List;
 
 public class CreateUserTest {
 
-
     @Given("Given  I have user infos:")
     public void givenIHaveUserInfosAnd(List<User> listUser) {
+        Request request = new Request();
         for (User user : listUser) {
+           assert user.getId() !=null;
+           assert user.getName() !=null;
 
         }
-        int x = 0;
-        assert x == 0;
     }
 
 
 
     @When("When send create user request")
-    public void whenSendCreateUserRequest() {
+    public void whenSendCreateUserRequest(List<User> listUser) {
         int x = 0;
         assert x == 0;
     }
