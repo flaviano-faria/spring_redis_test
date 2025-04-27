@@ -11,8 +11,9 @@ import io.cucumber.messages.internal.com.fasterxml.jackson.databind.ObjectMapper
 
 import java.util.List;
 
-
 public class CreateUserTest {
+    
+    private List<User> userList;
 
     @Given("Given  I have user infos:")
     public void givenIHaveUserInfosAnd(List<User> listUser) {
@@ -20,31 +21,22 @@ public class CreateUserTest {
         for (User user : listUser) {
            assert user.getId() !=null;
            assert user.getName() !=null;
-
         }
+        this.userList = listUser;
     }
 
-
-
     @When("When send create user request")
-    public void whenSendCreateUserRequest(List<User> listUser) {
-
+    public void whenSendCreateUserRequest() {
         Request request = new Request();
-        listUser.stream().forEach(
+        userList.stream().forEach(
                 user -> {
+                    request.doDeleteById(String.valueOf(user.getId()), "http://localhost:8080/userservice", "/delete/"+user.getId());
                     request.doPost(
                             JSonUtil.getJSONObject(user),
                             "http://localhost:8080/userservice/", "");
                 }
         );
     }
-
-    @Then( "I should have a user object retrieved")
-    public void retrieveUser(){
-        int x = 0;
-        assert x == 0;
-    }
-
 
     @Then("Then I should have a user object retrieved")
     public void thenIShouldHaveAUserObjectRetrieved() {

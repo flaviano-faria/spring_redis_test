@@ -9,7 +9,7 @@ public class Request {
     public String doGet(String url, String path) {
         Response response = given()
                 .when()
-                .get(path)
+                .get(url + path)
                 .then()
                 .extract()
                 .response();
@@ -22,9 +22,19 @@ public class Request {
                 .and()
                 .body(body)
                 .when()
-                .post(path)
+                .post(url + path)
                 .then()
                 .extract().response();
+        return response.getBody().asString();
+    }
+
+    public String doDeleteById(String id, String url, String path) {
+        Response response = given()
+                .when()
+                .delete(url + path)
+                .then()
+                .extract()
+                .response();
         return response.getBody().asString();
     }
 }
