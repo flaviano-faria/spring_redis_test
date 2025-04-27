@@ -40,7 +40,13 @@ public class CreateUserTest {
 
     @Then("Then I should have a user object retrieved")
     public void thenIShouldHaveAUserObjectRetrieved() {
-        int x = 0;
-        assert x == 0;
+        Request request = new Request();
+        userList.stream().forEach(
+                user -> {
+                    String response = request.doGet(
+                        "http://localhost:8080/userservice", "/findbyid/"+user.getId());
+                    assert response != null && response.length() > 0;
+                }
+        );
     }
 }
