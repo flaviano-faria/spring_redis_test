@@ -12,7 +12,9 @@ import io.cucumber.messages.internal.com.fasterxml.jackson.databind.ObjectMapper
 import java.util.List;
 
 public class CreateUserTest {
-    
+
+    public static final String URL = "http://localhost:8080/userservice";
+    public static final String FIND_BY_ID = "/findbyid/";
     private List<User> userList;
 
     @Given("Given  I have user infos:")
@@ -33,7 +35,7 @@ public class CreateUserTest {
                     request.doDeleteById(String.valueOf(user.getId()), "http://localhost:8080/userservice", "/delete/"+user.getId());
                     request.doPost(
                             JSonUtil.getJSONObject(user),
-                            "http://localhost:8080/userservice/", "");
+                            URL, "");
                 }
         );
     }
@@ -44,7 +46,7 @@ public class CreateUserTest {
         userList.stream().forEach(
                 user -> {
                     String response = request.doGet(
-                        "http://localhost:8080/userservice", "/findbyid/"+user.getId());
+                        URL, FIND_BY_ID +user.getId());
                     assert response != null && response.length() > 0;
                 }
         );
