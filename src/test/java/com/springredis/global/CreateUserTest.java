@@ -13,8 +13,8 @@ import java.util.List;
 
 public class CreateUserTest {
 
-    public static final String URL = "http://localhost:8080/userservice";
-    public static final String FIND_BY_ID = "/findbyid/";
+    private static final String URL = "http://localhost:8080/userservice";
+    private static final String FIND_BY_ID = "/findbyid/";
     private List<User> userList;
 
     @Given("Given  I have user infos:")
