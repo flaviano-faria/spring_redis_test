@@ -1,15 +1,9 @@
 package com.springredis.global;
 
-import com.springredis.util.json.JSonUtil;
 import com.springredis.util.request.Request;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
-import io.cucumber.datatable.DataTable;
-
 import java.util.List;
 
 
