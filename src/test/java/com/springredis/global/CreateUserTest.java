@@ -1,13 +1,9 @@
 package com.springredis.global;
 import com.springredis.util.json.JSonUtil;
 import com.springredis.util.request.Request;
-import io.cucumber.datatable.DataTable;
-import io.cucumber.java.StepDefinitionAnnotation;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.messages.internal.com.fasterxml.jackson.core.JsonProcessingException;
-import io.cucumber.messages.internal.com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
